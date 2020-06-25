@@ -28,8 +28,10 @@ defmodule Inv.Endpoint do
   require Logger
 
   def start_link(_opts) do
-    Logger.info("Starting server at http://localhost:4000/")
-    Plug.Cowboy.http(__MODULE__, [])
+    with {:ok, [port: port] = config} <- Application.fetch_env(:my_inv_app, __MODULE__) do
+      Logger.info("Starting server at http://localhost:#{port}/")
+      Plug.Cowboy.http(__MODULE__, [], config)
+    end
   end
 
 end
