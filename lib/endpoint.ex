@@ -1,5 +1,6 @@
 defmodule Inv.Endpoint do
   use Plug.Router
+  require Logger
 
   plug(:match)
 
@@ -12,7 +13,7 @@ defmodule Inv.Endpoint do
 
   plug(:dispatch)
 
-  forward("/bot", to: Inv.Router)
+  forward("/hello", to: Inv.Router)
 
   match _ do
     send_resp(conn, 404, "Requested page not found!")
@@ -24,8 +25,6 @@ defmodule Inv.Endpoint do
       start: {__MODULE__, :start_link, [opts]}
     }
   end
-
-  require Logger
 
   def start_link(_opts) do
     with {:ok, [port: port] = config} <- Application.fetch_env(:my_inv_app, __MODULE__) do

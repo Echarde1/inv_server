@@ -12,7 +12,6 @@ defmodule Inv.Router do
 
   defp message do
     %{
-      response_type: "in_channel",
       text: "Привет от Даньки!! Скоро он научит меня выгружать данные по облигациям и отправлять их в табличку"
     }
   end
