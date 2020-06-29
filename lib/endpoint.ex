@@ -19,6 +19,12 @@ defmodule Inv.Endpoint do
     send_resp(conn, 404, "Requested page not found!")
   end
 
+  @impl GenServer
+  def init(_) do
+    IO.puts("Inting Inv.Endpoints")
+    Inv.Repo.start()
+  end
+
   def child_spec(opts) do
     %{
       id: __MODULE__,
@@ -27,10 +33,11 @@ defmodule Inv.Endpoint do
   end
 
   def start_link(_opts) do
+    IO.puts("Starting Inv.Endpoints")
+
     with {:ok, [port: port] = config} <- Application.fetch_env(:my_inv_app, __MODULE__) do
       Logger.info("Starting server at http://localhost:#{port}/")
       Plug.Cowboy.http(__MODULE__, [], config)
     end
   end
-
 end
