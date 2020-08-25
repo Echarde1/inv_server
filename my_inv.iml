@@ -14,9 +14,14 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cowlib" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/db_connection" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/decimal" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/dialyxir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/distillery" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ecto_sql" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/elixir_xml_to_map" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/erlex" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/erlsom" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/exml" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/hackney" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/httpoison" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/idna" />
@@ -33,6 +38,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ssl_verify_fun" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/sweet_xml" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/telemetry" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/type_struct" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/artificery" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/certifi" />
@@ -44,6 +50,9 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/distillery" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/ecto_sql" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/elixir_xml_to_map" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/erlsom" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/exml" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/hackney" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/httpoison" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/idna" />
@@ -60,6 +69,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/ssl_verify_fun" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/sweet_xml" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/telemetry" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/type_struct" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/assets/node_modules/phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/assets/node_modules/phoenix_html" />
@@ -68,6 +78,7 @@
       <excludeFolder url="file://$MODULE_DIR$/doc" />
       <excludeFolder url="file://$MODULE_DIR$/logs" />
     </content>
+    <orderEntry type="jdk" jdkName="Elixir 1.10.3" jdkType="Elixir SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="poison" level="project" />
     <orderEntry type="library" name="plug" level="project" />
@@ -107,5 +118,31 @@
     <orderEntry type="library" name="httparrot" level="project" />
     <orderEntry type="library" name="sweet_xml" level="project" />
     <orderEntry type="library" name="exml" level="project" />
+    <orderEntry type="library" name="poison" level="project" />
+    <orderEntry type="library" name="plug" level="project" />
+    <orderEntry type="library" name="cowboy" level="project" />
+    <orderEntry type="library" name="plug_cowboy" level="project" />
+    <orderEntry type="library" name="ecto_sql" level="project" />
+    <orderEntry type="library" name="postgrex" level="project" />
+    <orderEntry type="library" name="httpoison" level="project" />
+    <orderEntry type="library" name="sweet_xml" level="project" />
+    <orderEntry type="library" name="exml" level="project" />
+    <orderEntry type="library" name="xml_builder" level="project" />
+    <orderEntry type="library" name="sweet_xml" level="project" />
+    <orderEntry type="library" name="xmerl" level="project" />
+    <orderEntry type="library" name="distillery" level="project" />
+    <orderEntry type="library" name="poison" level="project" />
+    <orderEntry type="library" name="plug" level="project" />
+    <orderEntry type="library" name="cowboy" level="project" />
+    <orderEntry type="library" name="plug_cowboy" level="project" />
+    <orderEntry type="library" name="ecto_sql" level="project" />
+    <orderEntry type="library" name="postgrex" level="project" />
+    <orderEntry type="library" name="httpoison" level="project" />
+    <orderEntry type="library" name="exml" level="project" />
+    <orderEntry type="library" name="elixir_xml_to_map" level="project" />
+    <orderEntry type="library" name="erlsom" level="project" />
+    <orderEntry type="library" name="type_struct" level="project" />
+    <orderEntry type="library" name="erlex" level="project" />
+    <orderEntry type="library" name="credo" level="project" />
   </component>
 </module>

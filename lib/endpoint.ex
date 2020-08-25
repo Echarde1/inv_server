@@ -19,7 +19,6 @@ defmodule Inv.Endpoint do
     send_resp(conn, 404, "Requested page not found!")
   end
 
-  @impl GenServer
   def init(_) do
     IO.puts("Inting Inv.Endpoints")
     Inv.Repo.start()

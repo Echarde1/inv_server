@@ -1,14 +1,27 @@
 defmodule InvServer.Application do
   use Application
 
-  def start(_type, _args) do
-    Supervisor.start_link(children(), opts())
+  def start(_type, args) do
+    Supervisor.start_link(children(args), opts())
   end
 
-  defp children do
-    [
-      Inv.Endpoint
-    ]
+  defp children(args) do
+    case args do
+      [env: :prod] -> [Inv.Endpoint]
+      [env: :dev] -> [Inv.Endpoint]
+      [env: :test] ->
+        [
+          {
+            Plug.Cowboy,
+            scheme: :http,
+            plug: GithubClient.MockServer,
+            options: [
+              port: 8081
+            ]
+          }
+        ]
+      [_] -> []
+    end
   end
 
   defp opts do

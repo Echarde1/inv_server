@@ -14,8 +14,10 @@ defmodule MyInv.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :httpoison],
-      mod: {InvServer.Application, []}
+      #      extra_applications: [:logger, :httpoison, :elixir_xml_to_map],
+      extra_applications: [:logger, :elixir_xml_to_map],
+      mod: {InvServer.Application, [env: Mix.env]},
+      applications: applications(Mix.env)
     ]
   end
 
@@ -23,6 +25,8 @@ defmodule MyInv.MixProject do
   defp deps do
     [
       {:distillery, "~> 2.0"},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+
       {:poison, "~> 4.0"},
       {:plug, "~> 1.7"},
       {:cowboy, "~> 2.5"},
@@ -32,10 +36,14 @@ defmodule MyInv.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:httpoison, "~> 1.6"},
 
-      {:sweet_xml, "~> 0.6.1"},
-      {:exml, "~> 0.1.0"}
+      {:sweet_xml, "~> 0.6.6"},
+      {:elixir_xml_to_map, "~> 1.0.1"},
+      {:type_struct, "~> 0.1.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
+
+  defp applications(:test), do: applications(:default) ++ [:cowboy, :plug]
+  defp applications(_), do: [:httpoison]
 end
