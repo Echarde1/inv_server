@@ -10,23 +10,21 @@ defmodule InvMoexTest do
   test "parse_bonds_list" do
     {:ok, xml_doc} = File.read(Path.expand("test/mock/moex_securities.xml"))
 
-    #    IO.inspect(
-    #      Enum.filter(
-    #        Inv.Moex.Bond.parse_xml_bonds_list(xml_doc),
-    #        fn map ->
-    #          Map.fetch!(map, "-ISIN") == "RU000A101FA1"
-    #        end
-    #      )
-    #    )
     result = Inv.Moex.Bond.parse_xml_bonds_list(xml_doc)
-    #    IO.inspect(result)
-    first = result
-            |> List.first
-    IO.inspect(first)
-    Map.from_struct(first)
-    |> Map.fetch!(:isin)
-    |> Kernel.is_bitstring
-    |> IO.inspect
+#    Inv.Moex.Bond.parse_xml_bonds_list(xml_doc)
+#    |> Enum.filter(
+#         fn x ->
+#           Map.fetch!(x, "-SECID") == "SU25083RMFS5"
+#         end
+#       )
+#    |> IO.inspect
+
+#    IO.inspect(length(elem(result, 0)) == length(elem(result, 1)))
+#    assert length(Map.fetch!(result, :r)) == length(Map.fetch!(result, :c))
+#    IO.inspect(length(Map.fetch!(result, :c)))
+    Enum.map(result, fn x ->
+      IO.inspect(x.prev_close_price)
+    end)
     assert 2 + 2 == 4
   end
 end
