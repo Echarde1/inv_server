@@ -1,9 +1,10 @@
 defmodule SecuritiesTest do
   use ExUnit.Case, async: true
 
-  test "parse_bonds_list" do
+#  test "parse_bonds_list" do
+  def parse_bonds_list(securities_list) do
     correct_result = [
-      %Bond.Securities.Securities{
+      %Bonds.Securities.Security{
         accumulated_coupon_income: "37",
         board_id: "TQCB",
         coupon_percent: "9.25",
@@ -16,7 +17,7 @@ defmodule SecuritiesTest do
         sec_name: "Тинькофф Банк БО 001Р-02R",
         secid: "RU000A1008B1"
       },
-      %Bond.Securities.Securities{
+      %Bonds.Securities.Security{
         accumulated_coupon_income: "13.61",
         board_id: "TQOB",
         coupon_percent: "7",
@@ -29,7 +30,7 @@ defmodule SecuritiesTest do
         sec_name: "ОФЗ-ПД 25083 15/12/21",
         secid: "SU25083RMFS5"
       },
-      %Bond.Securities.Securities{
+      %Bonds.Securities.Security{
         accumulated_coupon_income: "12.54",
         board_id: "TQOB",
         coupon_percent: "7.38",
@@ -44,8 +45,7 @@ defmodule SecuritiesTest do
       }
     ]
 
-    {:ok, xml_doc} = File.read(Path.expand("test/mock/moex_securities.xml"))
-    result = Bond.Securities.parse_xml_bonds_list(xml_doc)
+    result = Bonds.Securities.map_securities(securities_list)
     assert correct_result == result
   end
 end
