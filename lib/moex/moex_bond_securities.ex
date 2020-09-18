@@ -76,9 +76,9 @@ defmodule Bonds.Securities do
 
   # Есть лишние режимы торгов для некоторых бумаг, из-за чего возникают дубликаты
   defp filter_secid_duplicates(securities_list) do
-    cache_set_pid = Cache.Set.new()
-    build_secid_duplicates_set(securities_list, cache_set_pid)
-    secid_duplicates_set = Cache.Set.get_entries(cache_set_pid)
+    cache_pid = Cache.Set.new()
+    Utils.build_secid_duplicates_set(securities_list, cache_pid)
+    secid_duplicates_set = Cache.Set.get_entries(cache_pid)
 
     Enum.filter(
       securities_list,
@@ -115,29 +115,5 @@ defmodule Bonds.Securities do
            }
          end
        )
-
-  defp build_secid_duplicates_set([head | tail], cache_set_pid) do
-    fun = fn x ->
-      [head | tail] = x
-      list_contains_secid(tail, head, cache_set_pid)
-    end
-
-    fun.([head | tail])
-    build_secid_duplicates_set(tail, cache_set_pid)
-  end
-
-  defp build_secid_duplicates_set([], _), do: nil
-
-  defp list_contains_secid([head | tail], el, cache_set_pid) do
-    head_secid = Map.fetch!(head, @secid)
-    el_secid = Map.fetch!(el, @secid)
-    if head_secid == el_secid do
-      Cache.Set.add_entry(cache_set_pid, el_secid)
-    end
-
-    list_contains_secid(tail, el, cache_set_pid)
-  end
-
-  defp list_contains_secid([], _, _), do: nil
 
 end

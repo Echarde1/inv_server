@@ -12,13 +12,19 @@ defmodule Moex.Bonds do
                  |> Enum.sort_by(fn x -> x.secid end)
 
     secid_set = MapSet.new(securities, fn x -> x.secid end)
-    IO.inspect(MapSet.size(secid_set), label: "Secid size ")
-    IO.inspect(length(securities), label: "Securities size ")
+    IO.inspect(MapSet.size(secid_set), label: "Secid size")
+    IO.inspect(length(securities), label: "Securities size")
 
-    market_data = Bonds.MarketData.map_market_data(securities, get_market_data_rows_list(data_map))
+    market_data_rows = get_market_data_rows_list(data_map)
+    IO.inspect(length(market_data_rows), label: "Initial market data length")
+#    market_data = Bonds.MarketData.map_market_data(securities, market_data_rows)
+    market_data_set = Bonds.MarketData.map_market_data(securities, market_data_rows)
 
-#    securities
-    market_data
+#    IO.inspect(length(market_data), label: "Market data size")
+    IO.inspect(MapSet.size(market_data_set), label: "Market data size")
+    #    securities
+#    market_data
+    market_data_set
   end
 
   defp get_securities_rows_list(data_map), do: data_map
