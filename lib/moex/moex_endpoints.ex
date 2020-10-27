@@ -17,17 +17,18 @@ defmodule Inv.Moex.Endpoints do
     end
   end
 
-  def get_moex_bond_details(ticker) do
-    case HTTPoison.get(@base_url <> "/securities/#{ticker}") do
+  def get_moex_bond_details(secid) do
+    case HTTPoison.get(@base_url <> "/securities/#{secid}") do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        Logger.info("Moex bond with ticker #{ticker} info body: #{body}")
+        Logger.info("Moex bond with secid #{secid} info body: #{body}")
         Inv.Moex.parse_xml_bond_details_data(body)
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        Logger.error("Moex bond with ticker #{ticker} details fetch page not found")
+        Logger.error("Moex bond with secid #{secid} details fetch page not found")
         "Not found :("
       {:error, %HTTPoison.Error{reason: reason}} ->
-        Logger.error("Moex bond with ticker #{ticker} details fetch error: #{reason}")
+        Logger.error("Moex bond with secid #{secid} details fetch error: #{reason}")
         reason
     end
   end
+
 end

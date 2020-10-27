@@ -5,28 +5,29 @@ defmodule Bonds.MarketData do
   @duration "-DURATION"
 
   defstruct MarketData,
-            secid: str,
-              # Идентификатор для мосбиржи
+            secid: str, # Идентификатор для мосбиржи
             duration: integer # Дюрация
 
-  def map_market_data(securities_list, market_data_rows) do
-    cache_pid = Cache.Set.new()
+  def map_market_data(market_data_rows, securities) do
+    securities_secid_set = MapSet.new(securities, fn x -> x.secid end)
 
     market_data_rows
+    |> Enum.filter(
+         fn x ->
+           secid = Map.fetch!(x, @secid)
+           MapSet.member?(securities_secid_set, secid)
+         end
+       )
     |> filter_zero_duration
-    |> Utils.build_secid_duplicates_set(cache_pid)
-    #    |> Enum.filter(fn x ->
-    #       market_data_secid = Map.fetch!(x, @secid)
-    #       market_data_secid == Enum.find(securities_list, fn x -> x.secid == market_data_secid end)
-    #    end)
-    #    |> Enum.map(
-    #      fn x ->
-    #        %MarketData{
-    #          secid: Map.fetch!(x, @secid),
-    #          duration: Map.fetch!(x, @duration)
-    #        }
-    #      end
-    #    )
+    |> Enum.map(
+         fn x ->
+           %MarketData{
+             secid: Map.fetch!(x, @secid),
+             duration: Map.fetch!(x, @duration)
+                       |> Utils.parse_int
+           }
+         end
+       )
   end
 
   defp filter_zero_duration(market_data_rows), do:

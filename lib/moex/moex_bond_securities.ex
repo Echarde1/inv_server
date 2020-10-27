@@ -36,7 +36,7 @@ defmodule Bonds.Securities do
                                            |> filter_prev_price
                                            |> filter_list_level
                                            |> filter_secid_duplicates
-                                           |> map_raw_bond
+                                           |> map_to_struct
 
   defp filter_board_id(securities_list), do: securities_list
     |> Enum.filter(
@@ -94,7 +94,7 @@ defmodule Bonds.Securities do
     )
   end
 
-  defp map_raw_bond(securities_list), do:
+  defp map_to_struct(securities_list), do:
     securities_list
     |> Enum.map(
          fn x ->

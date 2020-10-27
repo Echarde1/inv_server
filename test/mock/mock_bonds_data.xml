@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <data id="securities">
+        <metadata>
+            <columns>
+                <column name="SECID" type="string" bytes="36" max_size="0" />
+                <column name="BOARDID" type="string" bytes="12" max_size="0" />
+                <column name="SHORTNAME" type="string" bytes="30" max_size="0" />
+                <column name="PREVWAPRICE" type="double" />
+                <column name="YIELDATPREVWAPRICE" type="double" />
+                <column name="COUPONVALUE" type="double" />
+                <column name="NEXTCOUPON" type="date" bytes="10" max_size="0" />
+                <column name="ACCRUEDINT" type="double" />
+                <column name="PREVPRICE" type="double" />
+                <column name="LOTSIZE" type="int32" />
+                <column name="FACEVALUE" type="double" />
+                <column name="BOARDNAME" type="string" bytes="381" max_size="0" />
+                <column name="STATUS" type="string" bytes="3" max_size="0" />
+                <column name="MATDATE" type="date" bytes="10" max_size="0" />
+                <column name="DECIMALS" type="int32" />
+                <column name="COUPONPERIOD" type="int32" />
+                <column name="ISSUESIZE" type="int64" />
+                <column name="PREVLEGALCLOSEPRICE" type="double" />
+                <column name="PREVADMITTEDQUOTE" type="double" />
+                <column name="PREVDATE" type="date" bytes="10" max_size="0" />
+                <column name="SECNAME" type="string" bytes="90" max_size="0" />
+                <column name="REMARKS" type="string" bytes="24" max_size="0" />
+                <column name="MARKETCODE" type="string" bytes="12" max_size="0" />
+                <column name="INSTRID" type="string" bytes="12" max_size="0" />
+                <column name="SECTORID" type="string" bytes="12" max_size="0" />
+                <column name="MINSTEP" type="double" />
+                <column name="FACEUNIT" type="string" bytes="12" max_size="0" />
+                <column name="BUYBACKPRICE" type="double" />
+                <column name="BUYBACKDATE" type="date" bytes="10" max_size="0" />
+                <column name="ISIN" type="string" bytes="36" max_size="0" />
+                <column name="LATNAME" type="string" bytes="90" max_size="0" />
+                <column name="REGNUMBER" type="string" bytes="90" max_size="0" />
+                <column name="CURRENCYID" type="string" bytes="12" max_size="0" />
+                <column name="ISSUESIZEPLACED" type="int64" />
+                <column name="LISTLEVEL" type="int32" />
+                <column name="SECTYPE" type="string" bytes="3" max_size="0" />
+                <column name="COUPONPERCENT" type="double" />
+                <column name="OFFERDATE" type="date" bytes="10" max_size="0" />
+                <column name="SETTLEDATE" type="date" bytes="10" max_size="0" />
+                <column name="LOTVALUE" type="double" />
+            </columns>
+        </metadata>
+        <rows>
+            <row SECID="RU000A1008B1" BOARDID="TQCB" SHORTNAME="Тинькофф2R" PREVWAPRICE="103.69" YIELDATPREVWAPRICE="6.59" COUPONVALUE="46.12" NEXTCOUPON="2021-03-31" ACCRUEDINT="6.84" PREVPRICE="103.8" LOTSIZE="1" FACEVALUE="1000" BOARDNAME="Т+: Облигации - безадрес." STATUS="A" MATDATE="2029-03-21" DECIMALS="2" COUPONPERIOD="182" ISSUESIZE="10000000" PREVLEGALCLOSEPRICE="103.8" PREVADMITTEDQUOTE="103.8" PREVDATE="2020-10-23" SECNAME="Тинькофф Банк БО 001Р-02R" REMARKS="" MARKETCODE="FNDT" INSTRID="EICB" SECTORID="" MINSTEP="0.01" FACEUNIT="SUR" BUYBACKPRICE="100" BUYBACKDATE="2022-03-30" ISIN="RU000A1008B1" LATNAME="Tinkoff Bank BO 001P-02R" REGNUMBER="4B020202673B001P" CURRENCYID="SUR" ISSUESIZEPLACED="10000000" LISTLEVEL="1" SECTYPE="8" COUPONPERCENT="9.25" OFFERDATE="2022-04-04" SETTLEDATE="2020-10-27" LOTVALUE="1000" />
+            <row SECID="SU25083RMFS5" BOARDID="SPOB" SHORTNAME="ОФЗ 25083" PREVWAPRICE="" YIELDATPREVWAPRICE="0" COUPONVALUE="34.9" NEXTCOUPON="2020-12-16" ACCRUEDINT="25.31" PREVPRICE="103.1025" LOTSIZE="1" FACEVALUE="1000" BOARDNAME="Поставка по ОФЗ" STATUS="A" MATDATE="2021-12-15" DECIMALS="4" COUPONPERIOD="182" ISSUESIZE="350000000" PREVLEGALCLOSEPRICE="" PREVADMITTEDQUOTE="" PREVDATE="2020-10-23" SECNAME="ОФЗ-ПД 25083 15/12/21" REMARKS="" MARKETCODE="RPST" INSTRID="GOFZ" SECTORID="" MINSTEP="0.0001" FACEUNIT="SUR" BUYBACKPRICE="" BUYBACKDATE="0000-00-00" ISIN="RU000A0ZYCK6" LATNAME="OFZ-PD 25083" REGNUMBER="25083RMFS" CURRENCYID="SUR" ISSUESIZEPLACED="350000000" LISTLEVEL="1" SECTYPE="3" COUPONPERCENT="7" OFFERDATE="" SETTLEDATE="2020-10-27" LOTVALUE="1000" />
+            <row SECID="SU25083RMFS5" BOARDID="TQDB" SHORTNAME="ОФЗ 25083" PREVWAPRICE="" YIELDATPREVWAPRICE="0" COUPONVALUE="34.9" NEXTCOUPON="2020-12-16" ACCRUEDINT="25.31" PREVPRICE="" LOTSIZE="1" FACEVALUE="1000" BOARDNAME="Крупные пакеты: Облигации - безадрес." STATUS="A" MATDATE="2021-12-15" DECIMALS="4" COUPONPERIOD="182" ISSUESIZE="350000000" PREVLEGALCLOSEPRICE="" PREVADMITTEDQUOTE="" PREVDATE="2020-10-23" SECNAME="ОФЗ-ПД 25083 15/12/21" REMARKS="" MARKETCODE="FNDT" INSTRID="GOFZ" SECTORID="" MINSTEP="0.001" FACEUNIT="SUR" BUYBACKPRICE="" BUYBACKDATE="0000-00-00" ISIN="RU000A0ZYCK6" LATNAME="OFZ-PD 25083" REGNUMBER="25083RMFS" CURRENCYID="SUR" ISSUESIZEPLACED="350000000" LISTLEVEL="1" SECTYPE="3" COUPONPERCENT="7" OFFERDATE="" SETTLEDATE="2020-10-27" LOTVALUE="1000" />
+            <row SECID="SU25083RMFS5" BOARDID="TQOB" SHORTNAME="ОФЗ 25083" PREVWAPRICE="102.961" YIELDATPREVWAPRICE="4.34" COUPONVALUE="34.9" NEXTCOUPON="2020-12-16" ACCRUEDINT="25.31" PREVPRICE="102.931" LOTSIZE="1" FACEVALUE="1000" BOARDNAME="Т+: Гособлигации - безадрес." STATUS="A" MATDATE="2021-12-15" DECIMALS="4" COUPONPERIOD="182" ISSUESIZE="350000000" PREVLEGALCLOSEPRICE="102.938" PREVADMITTEDQUOTE="102.938" PREVDATE="2020-10-23" SECNAME="ОФЗ-ПД 25083 15/12/21" REMARKS="" MARKETCODE="FNDT" INSTRID="GOFZ" SECTORID="" MINSTEP="0.001" FACEUNIT="SUR" BUYBACKPRICE="" BUYBACKDATE="0000-00-00" ISIN="RU000A0ZYCK6" LATNAME="OFZ-PD 25083" REGNUMBER="25083RMFS" CURRENCYID="SUR" ISSUESIZEPLACED="350000000" LISTLEVEL="1" SECTYPE="3" COUPONPERCENT="7" OFFERDATE="" SETTLEDATE="2020-10-27" LOTVALUE="1000" />
+            <row SECID="SU29010RMFS4" BOARDID="TQOB" SHORTNAME="ОФЗ 29010" PREVWAPRICE="109.993" YIELDATPREVWAPRICE="6.4" COUPONVALUE="36.8" NEXTCOUPON="2020-12-23" ACCRUEDINT="25.27" PREVPRICE="110.089" LOTSIZE="1" FACEVALUE="1000" BOARDNAME="Т+: Гособлигации - безадрес." STATUS="A" MATDATE="2034-12-06" DECIMALS="4" COUPONPERIOD="182" ISSUESIZE="390287001" PREVLEGALCLOSEPRICE="110.089" PREVADMITTEDQUOTE="110.089" PREVDATE="2020-10-23" SECNAME="ОФЗ-ПК 29010 06/12/34" REMARKS="" MARKETCODE="FNDT" INSTRID="GOFZ" SECTORID="" MINSTEP="0.001" FACEUNIT="SUR" BUYBACKPRICE="" BUYBACKDATE="0000-00-00" ISIN="RU000A0JV4Q1" LATNAME="OFZ-PD 29010" REGNUMBER="29010RMFS" CURRENCYID="SUR" ISSUESIZEPLACED="190287001" LISTLEVEL="1" SECTYPE="3" COUPONPERCENT="7.38" OFFERDATE="" SETTLEDATE="2020-10-27" LOTVALUE="1000" />
+        </rows>
+    </data>
+    <data id="marketdata">
+        <metadata>
+            <columns>
+                <column name="SECID" type="string" bytes="36" max_size="0" />
+                <column name="BID" type="double" />
+                <column name="BIDDEPTH" type="undefined" bytes="0" max_size="0" />
+                <column name="OFFER" type="double" />
+                <column name="OFFERDEPTH" type="undefined" bytes="0" max_size="0" />
+                <column name="SPREAD" type="double" />
+                <column name="BIDDEPTHT" type="int32" />
+                <column name="OFFERDEPTHT" type="int32" />
+                <column name="OPEN" type="double" />
+                <column name="LOW" type="double" />
+                <column name="HIGH" type="double" />
+                <column name="LAST" type="double" />
+                <column name="LASTCHANGE" type="double" />
+                <column name="LASTCHANGEPRCNT" type="double" />
+                <column name="QTY" type="int32" />
+                <column name="VALUE" type="double" />
+                <column name="YIELD" type="double" />
+                <column name="VALUE_USD" type="double" />
+                <column name="WAPRICE" type="double" />
+                <column name="LASTCNGTOLASTWAPRICE" type="double" />
+                <column name="WAPTOPREVWAPRICEPRCNT" type="double" />
+                <column name="WAPTOPREVWAPRICE" type="double" />
+                <column name="YIELDATWAPRICE" type="double" />
+                <column name="YIELDTOPREVYIELD" type="double" />
+                <column name="CLOSEYIELD" type="double" />
+                <column name="CLOSEPRICE" type="double" />
+                <column name="MARKETPRICETODAY" type="double" />
+                <column name="MARKETPRICE" type="double" />
+                <column name="LASTTOPREVPRICE" type="double" />
+                <column name="NUMTRADES" type="int32" />
+                <column name="VOLTODAY" type="int64" />
+                <column name="VALTODAY" type="int64" />
+                <column name="VALTODAY_USD" type="int64" />
+                <column name="BOARDID" type="string" bytes="12" max_size="0" />
+                <column name="TRADINGSTATUS" type="string" bytes="3" max_size="0" />
+                <column name="UPDATETIME" type="time" bytes="10" max_size="0" />
+                <column name="DURATION" type="double" />
+                <column name="NUMBIDS" type="undefined" bytes="0" max_size="0" />
+                <column name="NUMOFFERS" type="undefined" bytes="0" max_size="0" />
+                <column name="CHANGE" type="double" />
+                <column name="TIME" type="time" bytes="10" max_size="0" />
+                <column name="HIGHBID" type="undefined" bytes="0" max_size="0" />
+                <column name="LOWOFFER" type="undefined" bytes="0" max_size="0" />
+                <column name="PRICEMINUSPREVWAPRICE" type="double" />
+                <column name="LASTBID" type="undefined" bytes="0" max_size="0" />
+                <column name="LASTOFFER" type="undefined" bytes="0" max_size="0" />
+                <column name="LCURRENTPRICE" type="double" />
+                <column name="LCLOSEPRICE" type="double" />
+                <column name="MARKETPRICE2" type="double" />
+                <column name="ADMITTEDQUOTE" type="double" />
+                <column name="OPENPERIODPRICE" type="double" />
+                <column name="SEQNUM" type="int64" />
+                <column name="SYSTIME" type="datetime" bytes="19" max_size="0" />
+                <column name="VALTODAY_RUR" type="int64" />
+                <column name="IRICPICLOSE" type="double" />
+                <column name="BEICLOSE" type="double" />
+                <column name="CBRCLOSE" type="double" />
+                <column name="YIELDTOOFFER" type="double" />
+                <column name="YIELDLASTCOUPON" type="double" />
+                <column name="TRADINGSESSION" type="string" bytes="3" max_size="0" />
+            </columns>
+        </metadata>
+        <rows>
+            <row SECID="SU29010RMFS4" BID="" BIDDEPTH="" OFFER="" OFFERDEPTH="" SPREAD="0" BIDDEPTHT="0" OFFERDEPTHT="0" OPEN="110" LOW="109.9" HIGH="110.1" LAST="109.979" LASTCHANGE="0.079" LASTCHANGEPRCNT="0.07" QTY="1" VALUE="1099.79" YIELD="6.4" VALUE_USD="14.38" WAPRICE="110.016" LASTCNGTOLASTWAPRICE="-0.014" WAPTOPREVWAPRICEPRCNT="0.02" WAPTOPREVWAPRICE="0.023" YIELDATWAPRICE="6.4" YIELDTOPREVYIELD="0" CLOSEYIELD="0" CLOSEPRICE="" MARKETPRICETODAY="110.016" MARKETPRICE="109.993" LASTTOPREVPRICE="-0.1" NUMTRADES="142" VOLTODAY="9708" VALTODAY="10680361" VALTODAY_USD="139673" BOARDID="TQOB" TRADINGSTATUS="N" UPDATETIME="19:26:16" DURATION="3304" NUMBIDS="" NUMOFFERS="" CHANGE="-0.11" TIME="18:35:39" HIGHBID="" LOWOFFER="" PRICEMINUSPREVWAPRICE="-0.014" LASTBID="" LASTOFFER="" LCURRENTPRICE="109.979" LCLOSEPRICE="109.979" MARKETPRICE2="110.016" ADMITTEDQUOTE="109.979" OPENPERIODPRICE="" SEQNUM="540469" SYSTIME="2020-10-26 19:41:17" VALTODAY_RUR="10680361" IRICPICLOSE="5.63" BEICLOSE="" CBRCLOSE="" YIELDTOOFFER="" YIELDLASTCOUPON="" TRADINGSESSION="" />
+            <row SECID="SU25083RMFS5" BID="" BIDDEPTH="" OFFER="" OFFERDEPTH="" SPREAD="0" BIDDEPTHT="" OFFERDEPTHT="" OPEN="" LOW="" HIGH="" LAST="" LASTCHANGE="0" LASTCHANGEPRCNT="0" QTY="0" VALUE="0.00" YIELD="0" VALUE_USD="0" WAPRICE="" LASTCNGTOLASTWAPRICE="0" WAPTOPREVWAPRICEPRCNT="0" WAPTOPREVWAPRICE="0" YIELDATWAPRICE="0" YIELDTOPREVYIELD="0" CLOSEYIELD="0" CLOSEPRICE="" MARKETPRICETODAY="" MARKETPRICE="102.993" LASTTOPREVPRICE="0" NUMTRADES="0" VOLTODAY="0" VALTODAY="0" VALTODAY_USD="0" BOARDID="TQDB" TRADINGSTATUS="N" UPDATETIME="19:24:31" DURATION="0" NUMBIDS="" NUMOFFERS="" CHANGE="" TIME="19:24:31" HIGHBID="" LOWOFFER="" PRICEMINUSPREVWAPRICE="" LASTBID="" LASTOFFER="" LCURRENTPRICE="" LCLOSEPRICE="" MARKETPRICE2="" ADMITTEDQUOTE="" OPENPERIODPRICE="" SEQNUM="539516" SYSTIME="2020-10-26 19:39:32" VALTODAY_RUR="0" IRICPICLOSE="" BEICLOSE="" CBRCLOSE="" YIELDTOOFFER="" YIELDLASTCOUPON="" TRADINGSESSION="" />
+            <row SECID="SU25083RMFS5" BID="" BIDDEPTH="" OFFER="" OFFERDEPTH="" SPREAD="0" BIDDEPTHT="0" OFFERDEPTHT="0" OPEN="" LOW="" HIGH="" LAST="" LASTCHANGE="0" LASTCHANGEPRCNT="0" QTY="0" VALUE="0.00" YIELD="4.21" VALUE_USD="0" WAPRICE="" LASTCNGTOLASTWAPRICE="0" WAPTOPREVWAPRICEPRCNT="0" WAPTOPREVWAPRICE="0" YIELDATWAPRICE="0" YIELDTOPREVYIELD="0" CLOSEYIELD="0" CLOSEPRICE="" MARKETPRICETODAY="" MARKETPRICE="102.993" LASTTOPREVPRICE="0" NUMTRADES="0" VOLTODAY="0" VALTODAY="0" VALTODAY_USD="0" BOARDID="SPOB" TRADINGSTATUS="N" UPDATETIME="19:01:28" DURATION="0" NUMBIDS="" NUMOFFERS="" CHANGE="" TIME="19:01:28" HIGHBID="" LOWOFFER="" PRICEMINUSPREVWAPRICE="" LASTBID="" LASTOFFER="" LCURRENTPRICE="" LCLOSEPRICE="" MARKETPRICE2="" ADMITTEDQUOTE="" OPENPERIODPRICE="" SEQNUM="527094" SYSTIME="2020-10-26 19:16:30" VALTODAY_RUR="0" IRICPICLOSE="" BEICLOSE="" CBRCLOSE="" YIELDTOOFFER="" YIELDLASTCOUPON="" TRADINGSESSION="" />
+            <row SECID="SU29010RMFS4" BID="" BIDDEPTH="" OFFER="" OFFERDEPTH="" SPREAD="0" BIDDEPTHT="0" OFFERDEPTHT="0" OPEN="110" LOW="109.9" HIGH="110.1" LAST="109.979" LASTCHANGE="0.079" LASTCHANGEPRCNT="0.07" QTY="1" VALUE="1099.79" YIELD="6.4" VALUE_USD="14.38" WAPRICE="110.016" LASTCNGTOLASTWAPRICE="-0.014" WAPTOPREVWAPRICEPRCNT="0.02" WAPTOPREVWAPRICE="0.023" YIELDATWAPRICE="6.4" YIELDTOPREVYIELD="0" CLOSEYIELD="0" CLOSEPRICE="" MARKETPRICETODAY="110.016" MARKETPRICE="109.993" LASTTOPREVPRICE="-0.1" NUMTRADES="142" VOLTODAY="9708" VALTODAY="10680361" VALTODAY_USD="139673" BOARDID="TQOB" TRADINGSTATUS="N" UPDATETIME="19:26:16" DURATION="3304" NUMBIDS="" NUMOFFERS="" CHANGE="-0.11" TIME="18:35:39" HIGHBID="" LOWOFFER="" PRICEMINUSPREVWAPRICE="-0.014" LASTBID="" LASTOFFER="" LCURRENTPRICE="109.979" LCLOSEPRICE="109.979" MARKETPRICE2="110.016" ADMITTEDQUOTE="109.979" OPENPERIODPRICE="" SEQNUM="540469" SYSTIME="2020-10-26 19:41:17" VALTODAY_RUR="10680361" IRICPICLOSE="5.63" BEICLOSE="" CBRCLOSE="" YIELDTOOFFER="" YIELDLASTCOUPON="" TRADINGSESSION="" />
+        </rows>
+    </data>
+    <data id="dataversion">
+        <metadata>
+            <columns>
+                <column name="data_version" type="int32" />
+                <column name="seqnum" type="int64" />
+            </columns>
+        </metadata>
+        <rows>
+            <row data_version="5941" seqnum="540890" />
+        </rows>
+    </data>
+    <data id="marketdata_yields">
+        <metadata>
+            <columns>
+                <column name="SECID" type="string" bytes="36" max_size="0" />
+                <column name="BOARDID" type="string" bytes="12" max_size="0" />
+                <column name="PRICE" type="double" />
+                <column name="YIELDDATE" type="date" bytes="10" max_size="0" />
+                <column name="ZCYCMOMENT" type="datetime" bytes="19" max_size="0" />
+                <column name="YIELDDATETYPE" type="string" bytes="21" max_size="0" />
+                <column name="EFFECTIVEYIELD" type="double" />
+                <column name="DURATION" type="int32" />
+                <column name="ZSPREADBP" type="int32" />
+                <column name="GSPREADBP" type="int32" />
+                <column name="WAPRICE" type="double" />
+                <column name="EFFECTIVEYIELDWAPRICE" type="double" />
+                <column name="DURATIONWAPRICE" type="int32" />
+                <column name="IR" type="double" />
+                <column name="ICPI" type="double" />
+                <column name="BEI" type="double" />
+                <column name="CBR" type="double" />
+                <column name="YIELDTOOFFER" type="double" />
+                <column name="YIELDLASTCOUPON" type="double" />
+                <column name="TRADEMOMENT" type="datetime" bytes="19" max_size="0" />
+                <column name="SEQNUM" type="int64" />
+                <column name="SYSTIME" type="datetime" bytes="19" max_size="0" />
+            </columns>
+        </metadata>
+        <rows>
+
+        </rows>
+    </data>
+</document>
