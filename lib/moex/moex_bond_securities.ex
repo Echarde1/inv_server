@@ -6,7 +6,7 @@ defmodule Bonds.Securities do
   @prev_price "-PREVPRICE"
   @coupon_percent "-COUPONPERCENT"
   @board_id "-BOARDID"
-  @lowest_list_level 2
+  @lowest_list_level Bitwise.bsl(1, 32)
 
   # можно найти на https://iss.moex.com/iss/engines/stock/markets/bonds.xml
   @bonds_board_ids MapSet.new(

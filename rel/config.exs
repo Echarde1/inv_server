@@ -49,6 +49,7 @@ end
 release :my_inv_app do
   set version: current_version(:my_inv_app)
   set applications: [
+    :debugger,
     :runtime_tools
   ]
 end

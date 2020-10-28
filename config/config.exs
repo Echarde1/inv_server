@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :my_inv_app, Inv.Repo,
-  database: "my_inv_app_repo",
+  database: "inv_app_db",
   username: "user",
   password: "pass",
   hostname: "localhost"

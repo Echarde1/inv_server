@@ -7,7 +7,7 @@ defmodule Inv.Moex.Endpoints do
     case HTTPoison.get(@base_url <> "engines/stock/markets/bonds/securities.xml") do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         Logger.info("Moex bonds list body: #{body}")
-        Bonds.Securities.map_securities(body)
+        Moex.Bonds.parse_bonds_list_xml(body)
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         Logger.error("Moex bonds list fetch page not found")
         "Not found :("

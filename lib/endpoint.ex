@@ -13,7 +13,7 @@ defmodule Inv.Endpoint do
 
   plug(:dispatch)
 
-  forward("/hello", to: Inv.Router)
+  forward("/bonds", to: Inv.Router)
 
   match _ do
     send_resp(conn, 404, "Requested page not found!")

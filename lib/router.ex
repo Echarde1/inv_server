@@ -5,14 +5,11 @@ defmodule Inv.Router do
   plug(:dispatch)
 
   get "/" do
+    bonds = Inv.Moex.Endpoints.get_moex_bonds()
+
     conn
     |> put_resp_content_type("application/json")
-    |> send_resp(200, Poison.encode!(message()))
+    |> send_resp(200, Poison.encode!(bonds))
   end
 
-  defp message do
-    %{
-      text: "Привет от Даньки!! Скоро он научит меня выгружать данные по облигациям и отправлять их в табличку"
-    }
-  end
 end

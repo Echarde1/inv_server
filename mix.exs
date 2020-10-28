@@ -44,6 +44,7 @@ defmodule MyInv.MixProject do
     ]
   end
 
+  defp applications(:dev), do: applications(:default) ++ [:cowboy, :plug]
   defp applications(:test), do: applications(:default) ++ [:cowboy, :plug]
   defp applications(_), do: [:httpoison]
 end
