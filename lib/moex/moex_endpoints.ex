@@ -21,7 +21,7 @@ defmodule Inv.Moex.Endpoints do
     case HTTPoison.get(@base_url <> "/securities/#{secid}") do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         Logger.info("Moex bond with secid #{secid} info body: #{body}")
-        Inv.Moex.parse_xml_bond_details_data(body)
+        Moex.Bonds.parse_bond_security_details(body)
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         Logger.error("Moex bond with secid #{secid} details fetch page not found")
         "Not found :("

@@ -1,4 +1,4 @@
-defmodule Bonds.Securities do
+defmodule Bonds.ListSecurities do
   use TypeStruct
 
   @secid "-SECID"
@@ -18,7 +18,7 @@ defmodule Bonds.Securities do
                      ]
                    )
 
-  defstruct Security,
+  defstruct ListSecurity,
             secid: str, # Идентификатор для мосбиржи
             isin: str, # Общий идентификатор облигации
             sec_name: str,
@@ -35,6 +35,7 @@ defmodule Bonds.Securities do
                                            |> filter_board_id
                                            |> filter_prev_price
                                            |> filter_list_level
+                                           |> filter_coupon_percent
                                            |> filter_secid_duplicates
                                            |> map_to_struct
 
@@ -47,8 +48,8 @@ defmodule Bonds.Securities do
        )
 
   defp filter_prev_price(securities_list) do
-    predicate = fn (price) ->
-      Utils.is_not_empty_string(price) && Utils.parse_float(price) >= 0
+    predicate = fn (price_str) ->
+      Utils.is_not_empty_string(price_str) && Utils.parse_float(price_str) >= 0
     end
 
     securities_list
@@ -67,12 +68,19 @@ defmodule Bonds.Securities do
           |> Utils.parse_int <= level
        )
 
-  defp filter_coupon_percent(securities_list, percent \\ 0), do:
+  defp filter_coupon_percent(securities_list, percent \\ 0) do
+    predicate = fn (percent_str) ->
+      Utils.is_not_empty_string(percent_str) && Utils.parse_float(percent_str) >= percent
+    end
+
     securities_list
     |> Enum.filter(
-         &Map.fetch!(&1, @coupon_percent)
-          |> Utils.parse_float >= percent
+         fn x ->
+           coupon_percent = Map.fetch!(x, @coupon_percent)
+           predicate.(coupon_percent)
+         end
        )
+  end
 
   # Есть лишние режимы торгов для некоторых бумаг, из-за чего возникают дубликаты
   defp filter_secid_duplicates(securities_list) do
@@ -98,7 +106,7 @@ defmodule Bonds.Securities do
     securities_list
     |> Enum.map(
          fn x ->
-           %Security{
+           %ListSecurity{
              secid: Map.fetch!(x, @secid),
              isin: Map.fetch!(x, "-ISIN"),
              sec_name: Map.fetch!(x, "-SECNAME"),
@@ -109,9 +117,12 @@ defmodule Bonds.Securities do
                          |> Utils.parse_float,
              list_level: Map.fetch!(x, @list_level)
                          |> Utils.parse_int,
-             coupon_percent: Map.fetch!(x, @coupon_percent),
-             accumulated_coupon_income: Map.fetch!(x, "-ACCRUEDINT"),
-             coupon_value: Map.fetch!(x, "-COUPONVALUE"),
+             coupon_percent: Map.fetch!(x, @coupon_percent)
+                             |> Utils.parse_float,
+             accumulated_coupon_income: Map.fetch!(x, "-ACCRUEDINT")
+                                        |> Utils.parse_float,
+             coupon_value: Map.fetch!(x, "-COUPONVALUE")
+                           |> Utils.parse_float,
            }
          end
        )

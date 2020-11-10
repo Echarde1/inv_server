@@ -16,7 +16,7 @@ defmodule Inv.Endpoint do
   forward("/bonds", to: Inv.Router)
 
   match _ do
-    send_resp(conn, 404, "Requested page not found!")
+    send_resp(conn, 404, "Oooops! Requested page not found!")
   end
 
   def init(_) do

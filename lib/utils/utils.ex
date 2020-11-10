@@ -14,8 +14,8 @@ defmodule Utils do
 
   @spec parse_float(str) :: float
   def parse_float(str), do: str
-                          |> Float.parse
-                          |> elem(0)
+                            |> Float.parse
+                            |> elem(0)
 
   def build_secid_duplicates_set([head | tail], cache_set_pid) do
     fun = fn x ->

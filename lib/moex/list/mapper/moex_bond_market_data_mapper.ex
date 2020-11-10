@@ -1,4 +1,4 @@
-defmodule Bonds.MarketData do
+defmodule Bonds.ListMarketData do
   use TypeStruct
 
   @secid "-SECID"
@@ -30,11 +30,14 @@ defmodule Bonds.MarketData do
        )
   end
 
-  defp filter_zero_duration(market_data_rows), do:
+  defp filter_zero_duration(market_data_rows) do
+    default_duration_str = "0"
+
     market_data_rows
     |> Enum.filter(
-         &Map.fetch!(&1, @duration)
+         &Map.get(&1, @duration, default_duration_str)
           |> Utils.parse_int > 0
        )
+  end
 
 end
