@@ -21,6 +21,7 @@ defmodule Bonds.Details do
             init_value: float, # INITIALFACEVALUE Первоначальная номинальная стоимость
             currency: str, # FACEUNIT
             is_early_repayment_available: Boolean, # EARLYREPAYMENT
+            is_for_qualified: Boolean, # ISQUALIFIEDINVESTORS
             coupon_frequency: integer, # COUPONFREQUENCY Периодичность выплаты купона в год
             sec_subtype: str, # SECSUBTYPE Подтип облигации Облигации с ипотечным покрытием. Может отсутствовать
             type: str, # TYPE Вид/категория ценной бумаги Пр. ofz_bond
@@ -51,28 +52,22 @@ defmodule Bonds.Details do
       init_value: Map.fetch!(bond_details_map, "-INITIALFACEVALUE")
                   |> Utils.parse_int,
       currency: currency,
-      is_early_repayment_available: Map.fetch!(bond_details_map, "-EARLYREPAYMENT")
-                                    |> Utils.parse_int
-                                    |> map_early_payment_availability,
+      is_early_repayment_available: Map.get(bond_details_map, "-EARLYREPAYMENT", "0")
+                                    |> map_int_str_to_bool,
+      is_for_qualified: Map.get(bond_details_map, "-ISQUALIFIEDINVESTORS", "0")
+                        |> map_int_str_to_bool,
       coupon_frequency: Map.fetch!(bond_details_map, "-COUPONFREQUENCY")
                         |> Utils.parse_int,
-      sec_subtype: map_bond_subtype(bond_details_map),
+      sec_subtype: Map.get(bond_details_map, "-SECSUBTYPE", nil),
       type: type,
       type_name: Map.fetch!(@bonds_types_map, type)
     }
   end
 
-  defp map_early_payment_availability(integer) do
-    case integer do
+  defp map_int_str_to_bool(int_str) do
+    case Utils.parse_int(int_str) do
       1 -> true
       0 -> false
-    end
-  end
-
-  defp map_bond_subtype(bond) do
-    case Map.fetch(bond, "-SECSUBTYPE") do
-      {:ok, value} -> value
-      :error -> nil
     end
   end
 
