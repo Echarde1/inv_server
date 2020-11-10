@@ -39,19 +39,13 @@ defmodule Bonds.Details do
     )
 
     type = Map.fetch!(bond_details_map, "-TYPE")
-    currency = Map.fetch!(
-      @currencies_map,
-      Map.fetch!(bond_details_map, "-FACEUNIT")
-    )
-
-    IO.inspect(currency)
 
     %BondDetails{
       secid: Map.fetch!(bond_details_map, "-SECID"),
       name: Map.fetch!(bond_details_map, "-NAME"),
       init_value: Map.fetch!(bond_details_map, "-INITIALFACEVALUE")
                   |> Utils.parse_int,
-      currency: currency,
+      currency: Map.fetch!(@currencies_map, Map.fetch!(bond_details_map, "-FACEUNIT")),
       is_early_repayment_available: Map.get(bond_details_map, "-EARLYREPAYMENT", "0")
                                     |> map_int_str_to_bool,
       is_for_qualified: Map.get(bond_details_map, "-ISQUALIFIEDINVESTORS", "0")
